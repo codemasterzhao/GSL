@@ -177,29 +177,14 @@ Representation</h1>
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-            We present Generalizable Hierarchical Skill
-Learning (GSL), a novel framework for hierarchical policy
-learning that significantly improves policy generalization
-and sample efficiency in robot manipulation. One core
-idea of GSL is to use object-centric skills as an interface
-that bridges the high-level vision-language model and the
-low-level visual-motor policy. Specifically, GSL decomposes
-demonstrations into transferable and object-canonicalized
-skill primitives using foundation models, ensuring efficient
-low-level skill learning in the object frame. At test time,
-the skill–object pairs predicted by the high-level agent are
-fed to the low-level module, where the inferred canonical
-actions are mapped back to the world frame for execution.
-This structured yet flexible design leads to substantial
-improvements in sample efficiency and generalization of
-our method across unseen spatial arrangements, object
-appearances, and task compositions. In simulation, GSL
-trained with only 3 demonstrations per task outperforms
-baselines trained with 30 times more data by 15.5%
-on unseen tasks. In real-world experiments, GSL also
-surpasses the baseline trained with 10 times more data.
-          </p>
+        <p>
+          We introduce <strong>Generalizable Hierarchical Skill Learning
+  (GSL)</strong>, a novel framework for hierarchical policy learning that
+  significantly improves policy generalization and sample efficiency in robot
+  manipulation. GSL uses <strong>object-centric skills</strong> as an
+  interface that bridges high-level vision-language models and low-level
+  visual-motor policies.
+        </p>
         </div>
       </div>
     </div>
