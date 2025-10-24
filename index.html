@@ -178,8 +178,7 @@ Representation</h1>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
         <p>
-          We introduce <strong>Generalizable Hierarchical Skill Learning
-  (GSL)</strong>, a novel framework for hierarchical policy learning that
+          We introduce <strong>Generalizable Hierarchical Skill Learning (GSL)</strong>, a novel framework for hierarchical policy learning that
   significantly improves policy generalization and sample efficiency in robot
   manipulation. GSL uses <strong>object-centric skills</strong> as an
   interface that bridges high-level vision-language models and low-level
@@ -194,47 +193,58 @@ Representation</h1>
 
 
   <!-- Method Overview -->
+  <!-- Method Overview -->
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Method Overview</h2>
 
       <!-- Overview Image (4:3 aspect) -->
       <figure class="image is-4by3">
-        <img src="static/images/overview.png" alt="HEP Overview">
+        <img src="static/images/overview.png" alt="GSL Overview">
       </figure>
 
       <div class="content">
         <p>
-          We introduce <strong>Hierarchical Equivariant Policy (HEP)</strong>, a novel framework for efficient and generalizable robotic manipulation. HEP is built on two core ideas: a hierarchical policy structure and a new <strong>Frame Transfer interface</strong> that enables seamless generalization and robustness.
+          We introduce <strong>Generalizable Hierarchical Skill Learning
+  (GSL)</strong>, a novel framework for hierarchical policy learning that
+  significantly improves policy generalization and sample efficiency in robot
+  manipulation. GSL uses <strong>object-centric skills</strong> as an
+  interface that bridges high-level vision-language models and low-level
+  visual-motor policies.
         </p>
 
-        <h4 class="title is-4">Hierarchical Policy Structure</h4>
+        <h4 class="title is-4">Object-Centric Skill Learning</h4>
         <ul>
           <li>
-            <strong>High-level policy:</strong> Responsible for global, long-horizon planning by predicting a “keypose” (i.e., a target 3D translation) that serves as a subgoal.
+            <strong>High-level agent:</strong> Decomposes demonstrations into
+  transferable skill primitives using foundation models and selects
+  skill-object pairs for task execution.
           </li>
           <li>
-            <strong>Low-level policy:</strong> Generates fine-grained motion trajectories in a local coordinate frame anchored at the keypose.
+            <strong>Low-level policy:</strong> Learns canonical skills in
+  object-centric coordinate frames, enabling generalization across object
+  poses and appearances.
           </li>
         </ul>
         <p>
-          This separation allows the high-level policy to focus on strategy while the low-level handles precise control, greatly reducing complexity.
+          This structured yet flexible design enables the high-level to convey
+   semantic intent while the low-level performs localized control without
+  reasoning over the entire scene.
         </p>
 
-        <h4 class="title is-4">Frame Transfer Interface</h4>
-        <!-- Frame Transfer GIF, natural size -->
-      <figure class="image">
-        <video autoplay loop muted playsinline>
-          <source src="static/videos/frame_transfer.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </figure>
+        <h4 class="title is-4">Mask-as-Frame Interface</h4>
+        <!-- GSL Workflow Video -->
         <p>
-          Instead of hard constraints, the high-level outputs a reference translation defining a local frame. The low-level operates relative to this frame, providing:
+          Object masks serve as spatial reference frames, canonicalizing
+  skills in object coordinates:
         </p>
         <ul>
-          <li><strong>Soft constraints:</strong> Local trajectory optimization.</li>
-          <li><strong>Passing Generalization Ability:</strong> We prove that high level's generalization ability can be passed to low level.</li>
+          <li><strong>Transferable skills:</strong> Object-centric
+  canonicalization makes skills reusable across different object poses and
+  instances.</li>
+          <li><strong>Exceptional efficiency:</strong> Trained with only 3
+  demonstrations per task outperforms baselines trained with 100
+  demonstrations.</li>
         </ul>
       </div>
     </div>
@@ -246,14 +256,18 @@ Representation</h1>
       <h2 class="title is-3">Experiments</h2>
       <div class="content">
         <p>
-          Our method is tested on <strong>30 simulated tasks on RLBench</strong>—including high‑precision tasks, long‑horizon tasks, and articulated object manipulation—and further validated on a real robot across <strong>3 real‑world manipulation tasks</strong>. Check our paper for detailed results.
+          Our method is tested on <strong>GemBench simulation</strong> with 10
+   training tasks and 22 testing tasks, and validated on a real robot across
+  <strong>6 real-world manipulation tasks</strong>. GSL demonstrates superior
+  generalization across spatial arrangements, object appearances, and task
+  compositions. Check our paper for detailed results.
         </p>
       </div>
     </div>
   </section>
 
   
-<!--BibTex citation -->
+<!-- <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
@@ -264,7 +278,7 @@ Representation</h1>
   year={2025}
 }</code></pre>
     </div>
-</section>
+</section> -->
 <!--End BibTex citation -->
 
 
