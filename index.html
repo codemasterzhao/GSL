@@ -200,7 +200,7 @@ This structured yet flexible design leads to substantial improvements in sample 
 
       <!-- Overview Image (4:3 aspect) -->
       <figure class="image is-4by3">
-        <img src="static/images/overview.png" alt="GSL Overview">
+        <img src="static/images/fig1_dian.png" alt="GSL Overview">
       </figure>
 
       <div class="content">
@@ -232,20 +232,20 @@ This structured yet flexible design leads to substantial improvements in sample 
   reasoning over the entire scene.
         </p>
 
-        <h4 class="title is-4">Mask-as-Frame Interface</h4>
-        <!-- GSL Workflow Video -->
-        <p>
-          Object masks serve as spatial reference frames, canonicalizing
-  skills in object coordinates:
-        </p>
-        <ul>
-          <li><strong>Transferable skills:</strong> Object-centric
-  canonicalization makes skills reusable across different object poses and
-  instances.</li>
-          <li><strong>Exceptional efficiency:</strong> Trained with only 3
-  demonstrations per task outperforms baselines trained with 100
-  demonstrations.</li>
-        </ul>
+        
+ <h3 id="contrib-title">Contributions</h3>
+  <ul>
+    <li>
+      We propose <strong>G</strong>eneralizable Hierarchical <strong>S</strong>kill <strong>L</strong>earning (GSL), a novel framework for generalizable hierarchical policy learning.
+    </li>
+    <li>
+      We introduce an object-centric skill as the interface between high-level and low-level modules, providing a structured yet flexible communication channel.
+    </li>
+    <li>
+      We empirically show that GSL significantly improves generalization over strong baselines: trained with only 3 demonstrations, GSL outperforms baselines trained with 100 demonstrations by 15.5% on unseen tasks.
+    </li>
+  </ul>
+</section>
       </div>
     </div>
   </section>
@@ -255,13 +255,17 @@ This structured yet flexible design leads to substantial improvements in sample 
     <div class="container is-max-desktop">
       <h2 class="title is-3">Experiments</h2>
       <div class="content">
-        <p>
-          Our method is tested on <strong>GemBench simulation</strong> with 10
-   training tasks and 22 testing tasks, and validated on a real robot across
-  <strong>6 real-world manipulation tasks</strong>. GSL demonstrates superior
-  generalization across spatial arrangements, object appearances, and task
-  compositions. Check our paper for detailed results.
-        </p>
+<p>
+  GSL achieves a <strong>1.2%</strong> improvement on training tasks and a substantial 
+  <strong>23.4%</strong> gain on testing tasks, despite using only 
+  <strong>3 demonstrations</strong> compared to <strong>100</strong> in the baseline. 
+  Specifically, GSL outperforms baselines by <strong>1.2%</strong> on tasks requiring only 
+  <em>spatial generalization</em>, by <strong>12.2%</strong> on tasks requiring both 
+  <em>instance and appearance generalization</em> and spatial generalization, 
+  and by <strong>36.0%</strong> on tasks requiring the full spectrum of 
+  <em>instance/appearance</em>, <em>spatial</em>, and 
+  <em>skill compositional generalization</em>.
+</p>
       </div>
     </div>
   </section>
